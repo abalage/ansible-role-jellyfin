@@ -4,5 +4,5 @@
 jellyfin_user: jellyfin
 jellyfin_home: "/opt/jellyfin"
 jellyfin_version: 10.8.13
-ffpmeg_dir: "/usr/bin"
+ffmpeg_dir: "/usr/bin"
 jellyfin_autostart: true
