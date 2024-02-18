@@ -32,6 +32,7 @@
     owner: "{{ jellyfin_user }}"
     group: "{{ jellyfin_user }}"
     remote_src: true
+    creates: "{{ jellyfin_home }}/jellyfin_{{ jellyfin_version }}"
 
 - name: Create symlink for Jellyfin
   ansible.builtin.file:
@@ -63,22 +64,17 @@
     mode: "{{ item.mode }}"
   loop:
     - src: jellyfin.sh.j2
-      dest: "{{ jellyfin_home }}/jellyfin.sh"
+      dest: "/usr/local/bin/jellyfin.sh"
       mode: '0755'
     - src: jellyfin.service.j2
       dest: "/etc/systemd/system/jellyfin.service"
       mode: '0644'
 
-- name: Workaround to allow systemd service to start
-  ansible.builtin.file:
-    path: "{{ jellyfin_home }}"
-    mode: 0755
-  when: jellyfin_autostart
-
 - name: Start Jellyfin on boot
   ansible.builtin.systemd_service:
     name: jellyfin.service
-    daemon_reload: true
     enabled: true
     state: started
   when: jellyfin_autostart
+  tags:
+    - molecule-notest

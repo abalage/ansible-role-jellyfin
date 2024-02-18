@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User={{ jellyfin_user }}
 Restart=always
-ExecStart=/bin/bash {{ jellyfin_home }}/jellyfin.sh
+ExecStart=/bin/bash /usr/local/bin/jellyfin.sh
 
 [Install]
 WantedBy=multi-user.target
