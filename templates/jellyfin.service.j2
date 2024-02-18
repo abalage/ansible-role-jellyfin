@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-User=youruser
+User={{ jellyfin_user }}
 Restart=always
 ExecStart={{ jellyfin_home }}/jellyfin.sh
 
