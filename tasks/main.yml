@@ -27,6 +27,7 @@
   ansible.builtin.unarchive:
     src: "{{ jellyfin_home }}/jellyfin_{{ jellyfin_version }}_amd64.tar.gz"
     dest: "{{ jellyfin_home }}"
+    remote_src: true
 
 - name: Create symlink for Jellyfin
   ansible.builtin.file:
