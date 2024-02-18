@@ -65,6 +65,12 @@
       dest: "/etc/systemd/system/jellyfin.service"
       mode: '0644'
 
+- name: Workaround to allow systemd service to start
+  ansible.builtin.file:
+    path: "{{ jellyfin_home }}"
+    mode: 0755
+  when: jellyfin_autostart
+
 - name: Start Jellyfin on boot
   ansible.builtin.systemd_service:
     name: jellyfin.service
