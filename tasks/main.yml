@@ -21,12 +21,16 @@
     url: "https://repo.jellyfin.org/releases/server/linux/stable/combined/jellyfin_{{ jellyfin_version }}_amd64.tar.gz"
     dest: "{{ jellyfin_home }}/jellyfin_{{ jellyfin_version }}_amd64.tar.gz"
     checksum: "sha256:https://repo.jellyfin.org/releases/server/linux/stable/combined/jellyfin_{{ jellyfin_version }}_amd64.tar.gz.sha256sum"
+    owner: "{{ jellyfin_user }}"
+    group: "{{ jellyfin_user }}"
     mode: 0644
 
 - name: Unarchive downloaded Jellyfin archive
   ansible.builtin.unarchive:
     src: "{{ jellyfin_home }}/jellyfin_{{ jellyfin_version }}_amd64.tar.gz"
     dest: "{{ jellyfin_home }}"
+    owner: "{{ jellyfin_user }}"
+    group: "{{ jellyfin_user }}"
     remote_src: true
 
 - name: Create symlink for Jellyfin
@@ -45,10 +49,10 @@
     group: "{{ jellyfin_user }}"
     mode: 0755
   loop:
-    - "{{ jellyfin_home }}/jellyfin/data"
-    - "{{ jellyfin_home }}/jellyfin/cache"
-    - "{{ jellyfin_home }}/jellyfin/config"
-    - "{{ jellyfin_home }}/jellyfin/log"
+    - "{{ jellyfin_home }}/data"
+    - "{{ jellyfin_home }}/cache"
+    - "{{ jellyfin_home }}/config"
+    - "{{ jellyfin_home }}/log"
 
 - name: Generate script for startup
   ansible.builtin.template:
