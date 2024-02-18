@@ -19,7 +19,7 @@
 - name: Download Jellyfin archive
   ansible.builtin.get_url:
     url: "https://repo.jellyfin.org/releases/server/linux/stable/combined/jellyfin_{{ jellyfin_version }}_amd64.tar.gz"
-    dest: "{{ jellyfin_home }}"
+    dest: "{{ jellyfin_home }}/jellyfin_{{ jellyfin_version }}_amd64.tar.gz"
     checksum: "sha256:https://repo.jellyfin.org/releases/server/linux/stable/combined/jellyfin_{{ jellyfin_version }}_amd64.tar.gz.sha256sum"
     mode: 0644
 
