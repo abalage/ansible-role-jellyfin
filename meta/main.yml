@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Balázs NÉMETH
+  description: Install Jellyfin (generic amd64) on Linux
+  company: balagetech.com
+
+  license: GPL-2.0-or-later
+
+  min_ansible_version: "2.10"
+
+  galaxy_tags:
+    - jellyfin
+
+  role_name: jellyfin
+  #namespace: abalage
+
+dependencies: []
