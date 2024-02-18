@@ -11,6 +11,5 @@ galaxy_info:
     - jellyfin
 
   role_name: jellyfin
-  #namespace: abalage
 
 dependencies: []
