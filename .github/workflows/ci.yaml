@@ -33,6 +33,7 @@ jobs:
 
       - name: Lint code.
         run: |
+          cd abalage/ansible-role-jellyfin
           yamllint .
           ansible-lint
 
