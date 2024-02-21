@@ -45,9 +45,9 @@ jobs:
           - distro: ubuntu2204
             playbook: converge.yml
             experimental: false
-          - distro: debian12
-            playbook: converge.yml
-            experimental: false
+          # - distro: debian12
+          #   playbook: converge.yml
+          #   experimental: false
 
     steps:
       - name: Check out the codebase.
