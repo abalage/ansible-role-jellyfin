@@ -32,6 +32,7 @@ Example Playbook
 
 ```yaml
 - hosts: all
+  become: true
 
   roles:
     - abalage.jellyfin
