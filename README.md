@@ -1,6 +1,8 @@
 abalage.jellyfin
 ================
 
+[![CI](https://github.com/abalage/ansible-role-jellyfin/workflows/CI/badge.svg?event=push)](https://github.com/abalage/ansible-role-jellyfin/actions?query=workflow%3ACI)
+
 Installs Jellyfin as a generic amd64 package on Linux.
 
 Requirements
@@ -44,3 +46,5 @@ Author Information
 ------------------
 
 Created by Balázs NÉMETH (balagetech.com).
+
+Workflow code is inspired by Jeff Geerling's amazing work (https://github.com/geerlingguy/).
