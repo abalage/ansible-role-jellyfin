@@ -10,7 +10,7 @@ name: CI
 
 defaults:
   run:
-    working-directory: ./
+    working-directory: abalage/ansible-role-jellyfin
 
 jobs:
 
@@ -33,7 +33,6 @@ jobs:
 
       - name: Lint code.
         run: |
-          cd abalage/ansible-role-jellyfin
           yamllint .
           ansible-lint
 
